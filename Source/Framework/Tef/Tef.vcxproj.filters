@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="Utility\Prerequisites\PlatformDefines.h" />
+    <ClInclude Include="Utility\Prerequisites\StdHeaders.h" />
+    <ClInclude Include="Utility\Prerequisites\Types.h" />
+    <ClInclude Include="Utility\Prerequisites\PrerequisitesUtil.h" />
+    <ClInclude Include="Utility\Prerequisites\FwdDeclUtil.h" />
+    <ClInclude Include="Utility\Utility\DynLib.h" />
+    <ClInclude Include="Utility\Utility\DynLibManager.h" />
+    <ClInclude Include="Utility\Utility\Time.h" />
+    <ClInclude Include="Utility\Utility\Timer.h" />
+    <ClInclude Include="Utility\Utility\NonCopyable.h" />
+    <ClInclude Include="Utility\String\String.h" />
+    <ClInclude Include="Utility\Threading\Threading.h" />
+    <ClInclude Include="Utility\Debug\Debug.h" />
+    <ClInclude Include="Utility\Error\Error.h" />
+    <ClInclude Include="Utility\Allocators\BasicAllocator.h" />
+    <ClInclude Include="Utility\Allocators\MemoryAllocator.h" />
+    <ClInclude Include="Utility\Allocators\LinearAllocator.h" />
+    <ClInclude Include="Utility\Allocators\PoolAllocator.h" />
+    <ClInclude Include="Utility\Allocators\StackAllocator.h" />
+    <ClInclude Include="Utility\Error\Exception.h" />
+    <ClInclude Include="Utility\Utility\Module.h" />
+    <ClInclude Include="Utility\ThirdParty\DDSTextureLoader\DDSTextureLoader.h" />
+    <ClInclude Include="Utility\ThirdParty\TinyXML\tinyxml2.h" />
+    <ClInclude Include="Utility\Console\Console.h" />
+    <ClInclude Include="Utility\ThirdParty\Json\Json.h" />
+    <ClInclude Include="Core\CorePrerequisites.h" />
+    <ClInclude Include="Core\CoreApplication.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Utility\Utility\DynLib.cpp" />
+    <ClCompile Include="Utility\Utility\DynLibManager.cpp" />
+    <ClCompile Include="Utility\Utility\Timer.cpp" />
+    <ClCompile Include="Utility\Utility\Time.cpp" />
+    <ClCompile Include="Utility\String\String.cpp" />
+    <ClCompile Include="Utility\Allocators\BasicAllocator.cpp" />
+    <ClCompile Include="Utility\Allocators\MemoryAllocator.cpp" />
+    <ClCompile Include="Utility\Allocators\LinearAllocator.cpp" />
+    <ClCompile Include="Utility\Allocators\StackAllocator.cpp" />
+    <ClCompile Include="Utility\ThirdParty\TinyXML\tinyxml2.cpp" />
+    <ClCompile Include="Utility\ThirdParty\DDSTextureLoader\DDSTextureLoader.cpp" />
+    <ClCompile Include="Utility\Console\Console.cpp" />
+    <ClCompile Include="Core\CoreApplication.cpp" />
+  </ItemGroup>
+</Project>

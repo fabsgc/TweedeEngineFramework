@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tef", "Source\Framework\Tef\Tef.vcxproj", "{F9DCFD66-C0D1-4EE5-B70D-CF58B1B3774C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{2EF3A9F4-9DD1-4830-901F-8715E1C5C3FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{A4E8B9A8-86E6-4C37-86AB-B4D91BDBE7FB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TefD3D11RenderAPI", "Source\Plugins\TefD3D11RenderAPI\TefD3D11RenderAPI.vcxproj", "{F737AF69-CBC8-451E-A57E-7B5724D59670}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{302CFC70-9F1A-49FD-A129-551633A96001}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TefRenderer", "Source\Plugins\TefRenderer\TefRenderer.vcxproj", "{428A258B-199F-4AEA-8DAB-18B5E39F4899}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{3CB54B3A-5E3E-43CD-8678-707898E02288}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Example", "Source\Example\Example.vcxproj", "{F0E4D57C-A405-4D67-B303-2984AD07BEA8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9DCFD66-C0D1-4EE5-B70D-CF58B1B3774C}.Debug|x64.ActiveCfg = Debug|x64
+		{F9DCFD66-C0D1-4EE5-B70D-CF58B1B3774C}.Debug|x64.Build.0 = Debug|x64
+		{F9DCFD66-C0D1-4EE5-B70D-CF58B1B3774C}.Debug|x86.ActiveCfg = Debug|Win32
+		{F9DCFD66-C0D1-4EE5-B70D-CF58B1B3774C}.Debug|x86.Build.0 = Debug|Win32
+		{F9DCFD66-C0D1-4EE5-B70D-CF58B1B3774C}.Release|x64.ActiveCfg = Release|x64
+		{F9DCFD66-C0D1-4EE5-B70D-CF58B1B3774C}.Release|x64.Build.0 = Release|x64
+		{F9DCFD66-C0D1-4EE5-B70D-CF58B1B3774C}.Release|x86.ActiveCfg = Release|Win32
+		{F9DCFD66-C0D1-4EE5-B70D-CF58B1B3774C}.Release|x86.Build.0 = Release|Win32
+		{F737AF69-CBC8-451E-A57E-7B5724D59670}.Debug|x64.ActiveCfg = Debug|x64
+		{F737AF69-CBC8-451E-A57E-7B5724D59670}.Debug|x64.Build.0 = Debug|x64
+		{F737AF69-CBC8-451E-A57E-7B5724D59670}.Debug|x86.ActiveCfg = Debug|Win32
+		{F737AF69-CBC8-451E-A57E-7B5724D59670}.Debug|x86.Build.0 = Debug|Win32
+		{F737AF69-CBC8-451E-A57E-7B5724D59670}.Release|x64.ActiveCfg = Release|x64
+		{F737AF69-CBC8-451E-A57E-7B5724D59670}.Release|x64.Build.0 = Release|x64
+		{F737AF69-CBC8-451E-A57E-7B5724D59670}.Release|x86.ActiveCfg = Release|Win32
+		{F737AF69-CBC8-451E-A57E-7B5724D59670}.Release|x86.Build.0 = Release|Win32
+		{428A258B-199F-4AEA-8DAB-18B5E39F4899}.Debug|x64.ActiveCfg = Debug|x64
+		{428A258B-199F-4AEA-8DAB-18B5E39F4899}.Debug|x64.Build.0 = Debug|x64
+		{428A258B-199F-4AEA-8DAB-18B5E39F4899}.Debug|x86.ActiveCfg = Debug|Win32
+		{428A258B-199F-4AEA-8DAB-18B5E39F4899}.Debug|x86.Build.0 = Debug|Win32
+		{428A258B-199F-4AEA-8DAB-18B5E39F4899}.Release|x64.ActiveCfg = Release|x64
+		{428A258B-199F-4AEA-8DAB-18B5E39F4899}.Release|x64.Build.0 = Release|x64
+		{428A258B-199F-4AEA-8DAB-18B5E39F4899}.Release|x86.ActiveCfg = Release|Win32
+		{428A258B-199F-4AEA-8DAB-18B5E39F4899}.Release|x86.Build.0 = Release|Win32
+		{F0E4D57C-A405-4D67-B303-2984AD07BEA8}.Debug|x64.ActiveCfg = Debug|x64
+		{F0E4D57C-A405-4D67-B303-2984AD07BEA8}.Debug|x64.Build.0 = Debug|x64
+		{F0E4D57C-A405-4D67-B303-2984AD07BEA8}.Debug|x86.ActiveCfg = Debug|Win32
+		{F0E4D57C-A405-4D67-B303-2984AD07BEA8}.Debug|x86.Build.0 = Debug|Win32
+		{F0E4D57C-A405-4D67-B303-2984AD07BEA8}.Release|x64.ActiveCfg = Release|x64
+		{F0E4D57C-A405-4D67-B303-2984AD07BEA8}.Release|x64.Build.0 = Release|x64
+		{F0E4D57C-A405-4D67-B303-2984AD07BEA8}.Release|x86.ActiveCfg = Release|Win32
+		{F0E4D57C-A405-4D67-B303-2984AD07BEA8}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F9DCFD66-C0D1-4EE5-B70D-CF58B1B3774C} = {2EF3A9F4-9DD1-4830-901F-8715E1C5C3FB}
+		{F737AF69-CBC8-451E-A57E-7B5724D59670} = {A4E8B9A8-86E6-4C37-86AB-B4D91BDBE7FB}
+		{428A258B-199F-4AEA-8DAB-18B5E39F4899} = {A4E8B9A8-86E6-4C37-86AB-B4D91BDBE7FB}
+		{F0E4D57C-A405-4D67-B303-2984AD07BEA8} = {3CB54B3A-5E3E-43CD-8678-707898E02288}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {292B47F2-125A-4078-AE4E-FE88E20454D6}
+	EndGlobalSection
+EndGlobal

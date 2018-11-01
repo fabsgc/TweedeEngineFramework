@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{F9DCFD66-C0D1-4EE5-B70D-CF58B1B3774C}</ProjectGuid>
+    <RootNamespace>Tef</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)Build\bin\x86\Release\</OutDir>
+    <IntDir>$(SolutionDir)Build\obj\x86\Release\Tef\</IntDir>
+    <TargetName>Tef</TargetName>
+    <IncludePath>Utility\ThirdParty\Json;Utility\ThirdParty\TinyXML;Utility\ThirdParty\Assimp\include;$(IncludePath);F:\softwares\Microsoft DirectX SDK (June 2010)\Include;F:\softwares\Microsoft SDKs\Windows\v7.1\Include</IncludePath>
+    <LibraryPath>Utility\ThirdParty\Assimp\lib\lib86;F:\softwares\Microsoft DirectX SDK (June 2010)\Lib\x86;$(LibraryPath);F:\softwares\Microsoft SDKs\Windows\v7.1\Lib\</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)Build\bin\x64\Release\</OutDir>
+    <IntDir>$(SolutionDir)Build\obj\x64\Release\Tef\</IntDir>
+    <TargetName>Tef</TargetName>
+    <IncludePath>Utility\ThirdParty\Json;Utility\ThirdParty\TinyXML;Utility\ThirdParty\Assimp\include;$(IncludePath);F:\softwares\Microsoft DirectX SDK (June 2010)\Include;F:\softwares\Microsoft SDKs\Windows\v7.1\Include</IncludePath>
+    <LibraryPath>Utility\ThirdParty\Assimp\lib\lib64;F:\softwares\Microsoft DirectX SDK (June 2010)\Lib\x64;$(LibraryPath);F:\softwares\Microsoft SDKs\Windows\v7.1\Lib\</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)Build\bin\x64\Debug\</OutDir>
+    <IntDir>$(SolutionDir)Build\obj\x64\Debug\Tef\</IntDir>
+    <TargetName>Tef</TargetName>
+    <IncludePath>Utility\ThirdParty\Json;Utility\ThirdParty\TinyXML;Utility\ThirdParty\Assimp\include;$(IncludePath);F:\softwares\Microsoft DirectX SDK (June 2010)\Include;F:\softwares\Microsoft SDKs\Windows\v7.1\Include</IncludePath>
+    <LibraryPath>Utility\ThirdParty\Assimp\lib\lib64;F:\softwares\Microsoft DirectX SDK (June 2010)\Lib\x64;$(LibraryPath);F:\softwares\Microsoft SDKs\Windows\v7.1\Lib\</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)Build\bin\x86\Debug\</OutDir>
+    <IntDir>$(SolutionDir)Build\obj\x86\Debug\Tef\</IntDir>
+    <TargetName>Tef</TargetName>
+    <IncludePath>Utility\ThirdParty\Json;Utility\ThirdParty\TinyXML;Utility\ThirdParty\Assimp\include;$(IncludePath);F:\softwares\Microsoft DirectX SDK (June 2010)\Include;F:\softwares\Microsoft SDKs\Windows\v7.1\Include</IncludePath>
+    <LibraryPath>Utility\ThirdParty\Assimp\lib\lib86;F:\softwares\Microsoft DirectX SDK (June 2010)\Lib\x86;$(LibraryPath);F:\softwares\Microsoft SDKs\Windows\v7.1\Lib\</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <SDLCheck>
+      </SDLCheck>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>Utility\ThirdParty;Utility\;Core\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <OmitFramePointers />
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4577;4530</DisableSpecificWarnings>
+      <UseFullPaths>false</UseFullPaths>
+      <SupportJustMyCode />
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;TE_WIN_SDK_7;DEBUG;TE_EXPORTS;TE_CORE_EXPORTS;TE_UTILITY_EXPORTS;TE_CONFIG=TE_CONFIG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Utility\ThirdParty\Assimp\lib\lib32\assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>
+      </SDLCheck>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>Utility\ThirdParty;Utility\;Core\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;TE_WIN_SDK_7;DEBUG;TE_EXPORTS;TE_CORE_EXPORTS;TE_UTILITY_EXPORTS;TE_CONFIG=TE_CONFIG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4577;4530</DisableSpecificWarnings>
+      <SupportJustMyCode>false</SupportJustMyCode>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <UseFullPaths>false</UseFullPaths>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Utility\ThirdParty\Assimp\lib\lib64\assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>
+      </SDLCheck>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>Utility\ThirdParty;Utility\;Core\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;TE_WIN_SDK_7;NDEBUG;TE_EXPORTS;TE_CORE_EXPORTS;TE_UTILITY_EXPORTS;TE_CONFIG=TE_CONFIG_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4577;4530</DisableSpecificWarnings>
+      <OmitFramePointers />
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <ExceptionHandling />
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <UseFullPaths>false</UseFullPaths>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Utility\ThirdParty\Assimp\lib\lib32\assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>
+      </SDLCheck>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>Utility\ThirdParty;Utility\;Core\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;TE_WIN_SDK_7;NDEBUG;TE_EXPORTS;TE_CORE_EXPORTS;TE_UTILITY_EXPORTS;TE_CONFIG=TE_CONFIG_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4577;4530</DisableSpecificWarnings>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <UseFullPaths>false</UseFullPaths>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <ExceptionHandling />
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Utility\ThirdParty\Assimp\lib\lib64\assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\CoreApplication.h" />
+    <ClInclude Include="Core\CorePrerequisites.h" />
+    <ClInclude Include="Utility\Allocators\BasicAllocator.h" />
+    <ClInclude Include="Utility\Allocators\LinearAllocator.h" />
+    <ClInclude Include="Utility\Allocators\MemoryAllocator.h" />
+    <ClInclude Include="Utility\Allocators\PoolAllocator.h" />
+    <ClInclude Include="Utility\Allocators\StackAllocator.h" />
+    <ClInclude Include="Utility\Console\Console.h" />
+    <ClInclude Include="Utility\Debug\Debug.h" />
+    <ClInclude Include="Utility\Error\Error.h" />
+    <ClInclude Include="Utility\Error\Exception.h" />
+    <ClInclude Include="Utility\Prerequisites\FwdDeclUtil.h" />
+    <ClInclude Include="Utility\Prerequisites\PlatformDefines.h" />
+    <ClInclude Include="Utility\Prerequisites\PrerequisitesUtil.h" />
+    <ClInclude Include="Utility\Prerequisites\StdHeaders.h" />
+    <ClInclude Include="Utility\Prerequisites\Types.h" />
+    <ClInclude Include="Utility\String\String.h" />
+    <ClInclude Include="Utility\ThirdParty\DDSTextureLoader\DDSTextureLoader.h" />
+    <ClInclude Include="Utility\ThirdParty\Json\Json.h" />
+    <ClInclude Include="Utility\ThirdParty\TinyXML\tinyxml2.h" />
+    <ClInclude Include="Utility\Threading\Threading.h" />
+    <ClInclude Include="Utility\Utility\DynLib.h" />
+    <ClInclude Include="Utility\Utility\DynLibManager.h" />
+    <ClInclude Include="Utility\Utility\Module.h" />
+    <ClInclude Include="Utility\Utility\NonCopyable.h" />
+    <ClInclude Include="Utility\Utility\Time.h" />
+    <ClInclude Include="Utility\Utility\Timer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Core\CoreApplication.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Utility\Allocators\BasicAllocator.cpp" />
+    <ClCompile Include="Utility\Allocators\LinearAllocator.cpp" />
+    <ClCompile Include="Utility\Allocators\MemoryAllocator.cpp" />
+    <ClCompile Include="Utility\Allocators\StackAllocator.cpp" />
+    <ClCompile Include="Utility\Console\Console.cpp" />
+    <ClCompile Include="Utility\String\String.cpp" />
+    <ClCompile Include="Utility\ThirdParty\DDSTextureLoader\DDSTextureLoader.cpp" />
+    <ClCompile Include="Utility\ThirdParty\TinyXML\tinyxml2.cpp" />
+    <ClCompile Include="Utility\Utility\DynLib.cpp" />
+    <ClCompile Include="Utility\Utility\DynLibManager.cpp" />
+    <ClCompile Include="Utility\Utility\Time.cpp" />
+    <ClCompile Include="Utility\Utility\Timer.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
