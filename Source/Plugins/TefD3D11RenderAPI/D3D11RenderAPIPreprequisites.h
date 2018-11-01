@@ -27,13 +27,13 @@
 #       include <Xinput.h>
 
 #       if defined(TE_WIN_SDK_7)
-#           include <F:\softwares\Microsoft DirectX SDK (June 2010)\Include\d3dx11.h>
-#           include <F:\softwares\Microsoft DirectX SDK (June 2010)\Include\d3dcompiler.h>
-#           include <F:\softwares\Microsoft DirectX SDK (June 2010)\Include\comdecl.h>
-#           include <F:\softwares\Microsoft DirectX SDK (June 2010)\Include\xaudio2.h>
-#           include <F:\softwares\Microsoft DirectX SDK (June 2010)\Include\xaudio2fx.h>
-#           include <F:\softwares\Microsoft DirectX SDK (June 2010)\Include\xapofx.h>
-#           include <F:\softwares\Microsoft DirectX SDK (June 2010)\Include\x3daudio.h>
+#           include <d3dx11.h>
+#           include <d3dcompiler.h>
+#           include <comdecl.h>
+#           include <xaudio2.h>
+#           include <xaudio2fx.h>
+#           include <xapofx.h>
+#           include <x3daudio.h>
 #           pragma warning(pop)
 #           pragma comment(lib,"d3dx11.lib")
 #           pragma comment(lib,"x3daudio.lib")
