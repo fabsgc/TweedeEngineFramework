@@ -300,7 +300,7 @@ static size_t BitsPerPixel(_In_ DXGI_FORMAT fmt)
     case DXGI_FORMAT_D32_FLOAT_S8X24_UINT:
     case DXGI_FORMAT_R32_FLOAT_X8X24_TYPELESS:
     case DXGI_FORMAT_X32_TYPELESS_G8X24_UINT:
-#if defined(EGE_WIN_SDK_8) || defined(EGE_WIN_SDK_10)
+#if defined(TE_WIN_SDK_8) || defined(TE_WIN_SDK_10)
     case DXGI_FORMAT_Y416:
     case DXGI_FORMAT_Y210:
     case DXGI_FORMAT_Y216:
@@ -342,14 +342,14 @@ static size_t BitsPerPixel(_In_ DXGI_FORMAT fmt)
     case DXGI_FORMAT_B8G8R8A8_UNORM_SRGB:
     case DXGI_FORMAT_B8G8R8X8_TYPELESS:
     case DXGI_FORMAT_B8G8R8X8_UNORM_SRGB:
-#if defined(EGE_WIN_SDK_8) || defined(EGE_WIN_SDK_10)
+#if defined(TE_WIN_SDK_8) || defined(TE_WIN_SDK_10)
     case DXGI_FORMAT_AYUV:
     case DXGI_FORMAT_Y410:
     case DXGI_FORMAT_YUY2:
 #endif
         return 32;
 
-#if defined(EGE_WIN_SDK_8) || defined(EGE_WIN_SDK_10)
+#if defined(TE_WIN_SDK_8) || defined(TE_WIN_SDK_10)
     case DXGI_FORMAT_P010:
     case DXGI_FORMAT_P016:
         return 24;
@@ -369,13 +369,13 @@ static size_t BitsPerPixel(_In_ DXGI_FORMAT fmt)
     case DXGI_FORMAT_R16_SINT:
     case DXGI_FORMAT_B5G6R5_UNORM:
     case DXGI_FORMAT_B5G5R5A1_UNORM:
-#if defined(EGE_WIN_SDK_8) || defined(EGE_WIN_SDK_10)
+#if defined(TE_WIN_SDK_8) || defined(TE_WIN_SDK_10)
     case DXGI_FORMAT_A8P8:
     case DXGI_FORMAT_B4G4R4A4_UNORM:
         return 16;
 #endif
 
-#if defined(EGE_WIN_SDK_8) || defined(EGE_WIN_SDK_10)
+#if defined(TE_WIN_SDK_8) || defined(TE_WIN_SDK_10)
     case DXGI_FORMAT_NV12:
     case DXGI_FORMAT_420_OPAQUE:
     case DXGI_FORMAT_NV11:
@@ -388,7 +388,7 @@ static size_t BitsPerPixel(_In_ DXGI_FORMAT fmt)
     case DXGI_FORMAT_R8_SNORM:
     case DXGI_FORMAT_R8_SINT:
     case DXGI_FORMAT_A8_UNORM:
-#if defined(EGE_WIN_SDK_8) || defined(EGE_WIN_SDK_10)
+#if defined(TE_WIN_SDK_8) || defined(TE_WIN_SDK_10)
     case DXGI_FORMAT_AI44:
     case DXGI_FORMAT_IA44:
     case DXGI_FORMAT_P8:
@@ -493,14 +493,14 @@ static void GetSurfaceInfo(_In_ size_t width,
 
     case DXGI_FORMAT_R8G8_B8G8_UNORM:
     case DXGI_FORMAT_G8R8_G8B8_UNORM:
-#if defined(EGE_WIN_SDK_8) || defined(EGE_WIN_SDK_10)
+#if defined(TE_WIN_SDK_8) || defined(TE_WIN_SDK_10)
     case DXGI_FORMAT_YUY2:
 #endif
         packed = true;
         bpe = 4;
         break;
 
-#if defined(EGE_WIN_SDK_8) || defined(EGE_WIN_SDK_10)
+#if defined(TE_WIN_SDK_8) || defined(TE_WIN_SDK_10)
     case DXGI_FORMAT_Y210:
     case DXGI_FORMAT_Y216:
         packed = true;
@@ -508,7 +508,7 @@ static void GetSurfaceInfo(_In_ size_t width,
         break;
 #endif
 
-#if defined(EGE_WIN_SDK_8) || defined(EGE_WIN_SDK_10)
+#if defined(TE_WIN_SDK_8) || defined(TE_WIN_SDK_10)
     case DXGI_FORMAT_NV12:
     case DXGI_FORMAT_420_OPAQUE:
         planar = true;
@@ -516,7 +516,7 @@ static void GetSurfaceInfo(_In_ size_t width,
         break;
 #endif
 
-#if defined(EGE_WIN_SDK_8) || defined(EGE_WIN_SDK_10)
+#if defined(TE_WIN_SDK_8) || defined(TE_WIN_SDK_10)
     case DXGI_FORMAT_P010:
     case DXGI_FORMAT_P016:
         planar = true;
@@ -558,7 +558,7 @@ static void GetSurfaceInfo(_In_ size_t width,
         numRows = height;
         numBytes = rowBytes * height;
     }
-#if defined(EGE_WIN_SDK_8) || defined(EGE_WIN_SDK_10)
+#if defined(TE_WIN_SDK_8) || defined(TE_WIN_SDK_10)
     else if (fmt == DXGI_FORMAT_NV11)
     {
         rowBytes = ((width + 3) >> 2) * 4;
@@ -665,7 +665,7 @@ static DXGI_FORMAT GetDXGIFormat(const DDS_PIXELFORMAT& ddpf)
             }
 
             // No DXGI format maps to ISBITMASK(0x7c00,0x03e0,0x001f,0x0000) aka D3DFMT_X1R5G5B5
-#if defined(EGE_WIN_SDK_8) || defined(EGE_WIN_SDK_10)
+#if defined(TE_WIN_SDK_8) || defined(TE_WIN_SDK_10)
             if (ISBITMASK(0x0f00, 0x00f0, 0x000f, 0xf000))
             {
                 return DXGI_FORMAT_B4G4R4A4_UNORM;
@@ -771,7 +771,7 @@ static DXGI_FORMAT GetDXGIFormat(const DDS_PIXELFORMAT& ddpf)
             return DXGI_FORMAT_G8R8_G8B8_UNORM;
         }
 
-#if defined(EGE_WIN_SDK_8) || defined(EGE_WIN_SDK_10)
+#if defined(TE_WIN_SDK_8) || defined(TE_WIN_SDK_10)
         if (MAKEFOURCC('Y', 'U', 'Y', '2') == ddpf.fourCC)
         {
             return DXGI_FORMAT_YUY2;
@@ -1221,7 +1221,7 @@ static HRESULT CreateTextureFromDDS(_In_ ID3D11Device* d3dDevice,
             return HRESULT_FROM_WIN32(ERROR_INVALID_DATA);
         }
 
-#if defined(EGE_WIN_SDK_8) || defined(EGE_WIN_SDK_10)
+#if defined(TE_WIN_SDK_8) || defined(TE_WIN_SDK_10)
         switch (d3d10ext->dxgiFormat)
         {
         case DXGI_FORMAT_AI44:

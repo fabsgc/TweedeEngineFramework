@@ -11,7 +11,7 @@ namespace te
     *  ############# LINEAR ALLOCATOR ####################################
     *  ################################################################ */
 
-    class LinearAllocator
+    class TE_UTILITY_EXPORT LinearAllocator
     {
     public:
         LinearAllocator(size_t size = sizeof(UINT32) * 8192)
@@ -64,8 +64,8 @@ namespace te
 
     LinearAllocator& gLinearAllocator();
 
-    void* ege_linear_allocate(UINT32 numBytes);
-    void ege_linear_deallocate(void* data);
+    TE_UTILITY_EXPORT void* te_linear_allocate(UINT32 numBytes);
+    TE_UTILITY_EXPORT void te_linear_deallocate(void* data);
 
     /* ###################################################################
     *  ############# MEMORY ALLOCATOR FOR STD ALLOCATOR ##################
@@ -75,7 +75,7 @@ namespace te
     * Memory allocator using LinearAllocator
     */
     template<>
-    class MemoryAllocator<LinearAllocator> : public MemoryAllocatorBase
+    class TE_UTILITY_EXPORT MemoryAllocator<LinearAllocator> : public MemoryAllocatorBase
     {
     public:
         static void* Allocate(size_t bytes)

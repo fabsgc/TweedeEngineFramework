@@ -6,7 +6,7 @@
 
 namespace te
 {
-    class Time : public Module<Time>
+    class TE_UTILITY_EXPORT Time : public Module<Time>
     {
     public:
         Time();

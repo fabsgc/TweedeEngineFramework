@@ -57,12 +57,25 @@
 #   define TE_ASSERT(x)
 #endif
 
-#include "Prerequisites/FwdDeclUtil.h"
-#include "Prerequisites/Types.h"
-#include "Allocators/MemoryAllocator.h"
-#include "Prerequisites/StdHeaders.h"
+#if TE_PLATFORM == TE_PLATFORM_WIN32
+#   if defined(TE_WIN_SDK_7)
+#       pragma warning(push)
+#       pragma warning( disable : 4005 )
+#   elif defined(TE_WIN_SDK_8)
+#       define WIN32_LEAN_AND_MEAN
+#       define _WIN32_WINNT _WIN32_WINNT_WIN8
+#   elif defined(TE_WIN_SDK_10)
+#       define WIN32_LEAN_AND_MEAN
+#       define _WIN32_WINNT _WIN32_WINNT_WIN10
+#   endif
+#endif
+
 #include "Debug/Debug.h"
 #include "Error/Error.h"
-#include "String/String.h"
 #include "Utility/NonCopyable.h"
+#include "Prerequisites/Types.h"
+#include "Prerequisites/FwdDeclUtil.h"
+#include "Allocators/MemoryAllocator.h"
+#include "Prerequisites/StdHeaders.h"
+#include "String/String.h"
 #include "Threading/Threading.h"

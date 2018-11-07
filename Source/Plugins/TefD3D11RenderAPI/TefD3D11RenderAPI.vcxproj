@@ -74,24 +74,32 @@
     <IntDir>$(SolutionDir)Build\obj\x86\Debug\TefD3D11RenderAPI\</IntDir>
     <TargetExt>.dll</TargetExt>
     <TargetName>TefD3D11RenderAPI</TargetName>
+    <IncludePath>F:\softwares\Microsoft DirectX SDK (June 2010)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\softwares\Microsoft DirectX SDK (June 2010)\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)Build\bin\x64\Debug\</OutDir>
     <IntDir>$(SolutionDir)Build\obj\x64\Debug\TefD3D11RenderAPI\</IntDir>
     <TargetExt>.dll</TargetExt>
     <TargetName>TefD3D11RenderAPI</TargetName>
+    <IncludePath>F:\softwares\Microsoft DirectX SDK (June 2010)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\softwares\Microsoft DirectX SDK (June 2010)\Lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)Build\bin\x64\Release\</OutDir>
     <IntDir>$(SolutionDir)Build\bin\x64\Release\TefD3D11RenderAPI\</IntDir>
     <TargetExt>.dll</TargetExt>
     <TargetName>TefD3D11RenderAPI</TargetName>
+    <IncludePath>F:\softwares\Microsoft DirectX SDK (June 2010)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\softwares\Microsoft DirectX SDK (June 2010)\Lib\x64</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)Build\bin\x86\Release\</OutDir>
     <IntDir>$(SolutionDir)Build\obj\x86\Release\TefD3D11RenderAPI\</IntDir>
     <TargetExt>.dll</TargetExt>
     <TargetName>TefD3D11RenderAPI</TargetName>
+    <IncludePath>F:\softwares\Microsoft DirectX SDK (June 2010)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\softwares\Microsoft DirectX SDK (June 2010)\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -101,7 +109,7 @@
       </SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>..\..\Framework\Tef\Core;..\..\Framework\Tef\Utility;..\..\Framework\Tef\Utility\ThirdParty;F:\softwares\Microsoft DirectX SDK (June 2010)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;TE_WIN_SDK_7;&lt;DEBUG;TE_RSD3D11_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;TE_WIN_SDK_7;TE_D3D11_RENDER_API_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SupportJustMyCode>false</SupportJustMyCode>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
@@ -127,7 +135,7 @@
       <AdditionalIncludeDirectories>..\..\Framework\Tef\Core;..\..\Framework\Tef\Utility;..\..\Framework\Tef\Utility\ThirdParty;F:\softwares\Microsoft DirectX SDK (June 2010)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;TE_WIN_SDK_7;&lt;DEBUG;TE_RSD3D11_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;TE_WIN_SDK_7;TE_D3D11_RENDER_API_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <LanguageStandard>stdcpp17</LanguageStandard>
@@ -150,7 +158,7 @@
       <SDLCheck>
       </SDLCheck>
       <ConformanceMode>false</ConformanceMode>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;TE_WIN_SDK_7;&lt;NDEBUG;TE_RSD3D11_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;TE_WIN_SDK_7;TE_D3D11_RENDER_API_EXPORTS;</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\Framework\Tef\Core;..\..\Framework\Tef\Utility;..\..\Framework\Tef\Utility\ThirdParty;F:\softwares\Microsoft DirectX SDK (June 2010)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -179,7 +187,7 @@
       <AdditionalIncludeDirectories>..\..\Framework\Tef\Core;..\..\Framework\Tef\Utility;..\..\Framework\Tef\Utility\ThirdParty;F:\softwares\Microsoft DirectX SDK (June 2010)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;TE_WIN_SDK_7;&lt;NDEBUG;TE_RSD3D11_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;TE_WIN_SDK_7;TE_D3D11_RENDER_API_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <LanguageStandard>stdcpp17</LanguageStandard>

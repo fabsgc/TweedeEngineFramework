@@ -17,12 +17,12 @@ namespace te
         return *_GlobalLinearAllocator;
     }
 
-    void* ege_linear_allocate(UINT32 numBytes)
+    void* te_linear_allocate(UINT32 numBytes)
     {
         return gLinearAllocator().Allocate(numBytes);
     }
 
-    void ege_linear_deallocate(void* data)
+    void te_linear_deallocate(void* data)
     {
         gLinearAllocator().Deallocate((UINT8*)data);
     }

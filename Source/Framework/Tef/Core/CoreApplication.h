@@ -5,8 +5,9 @@
 
 namespace te
 {
-    class CoreApplication : Module<CoreApplication>
+    class TE_CORE_EXPORT CoreApplication
     {
+    public:
         CoreApplication() {};
         ~CoreApplication() = default;
     };

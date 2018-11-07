@@ -12,7 +12,7 @@ namespace te
     *  ############# BASIC ALLOCATOR #####################################
     *  ################################################################ */
 
-    class BasicAllocator
+    class TE_UTILITY_EXPORT BasicAllocator
     {
     public:
         BasicAllocator() {}
@@ -37,10 +37,10 @@ namespace te
     *  ############# ALLOCATOR METHODS ###################################
     *  ################################################################ */
 
-    BasicAllocator& gBasicAllocator();
+    TE_UTILITY_EXPORT BasicAllocator& gBasicAllocator();
 
-    void* ege_basic_allocate(UINT32 numBytes);
-    void ege_basic_deallocate(void* data);
+    TE_UTILITY_EXPORT void* te_basic_allocate(UINT32 numBytes);
+    TE_UTILITY_EXPORT void te_basic_deallocate(void* data);
 
     /* ###################################################################
     *  ############# MEMORY ALLOCATOR FOR STD ALLOCATOR ##################
@@ -51,7 +51,7 @@ namespace te
     */
 
     template<>
-    class MemoryAllocator<BasicAllocator> : public MemoryAllocatorBase
+    class TE_UTILITY_EXPORT MemoryAllocator<BasicAllocator> : public MemoryAllocatorBase
     {
     public:
         static void* Allocate(size_t bytes)

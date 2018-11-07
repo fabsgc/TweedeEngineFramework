@@ -5,7 +5,7 @@
 
 namespace te
 {
-    class Console : public Module<Console>
+    class TE_UTILITY_EXPORT Console : public Module<Console>
     {
     public:
         Console() {}

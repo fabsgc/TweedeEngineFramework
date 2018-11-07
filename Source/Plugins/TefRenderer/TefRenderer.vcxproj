@@ -100,7 +100,7 @@
       <SDLCheck>
       </SDLCheck>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\Tef\Core;..\..\Tef\Utility;..\..\Utility\ThirdParty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Framework\Tef\Core;..\..\Framework\Tef\Utility;..\..\Framework\Tef\Utility\ThirdParty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <ExceptionHandling />
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
@@ -108,7 +108,7 @@
       <CompileAs>CompileAsCpp</CompileAs>
       <DisableSpecificWarnings>4577;4530</DisableSpecificWarnings>
       <BufferSecurityCheck>false</BufferSecurityCheck>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;DEBUG;TE_WIN_SDK_7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;TE_WIN_SDK_7;TE_RENDERER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SupportJustMyCode />
     </ClCompile>
     <Link>
@@ -122,8 +122,8 @@
       <SDLCheck>
       </SDLCheck>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\Tef\Core;..\..\Tef\Utility;..\..\Utility\ThirdParty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;DEBUG;TE_WIN_SDK_7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\Framework\Tef\Core;..\..\Framework\Tef\Utility;..\..\Framework\Tef\Utility\ThirdParty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;TE_WIN_SDK_7;TE_RENDERER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SupportJustMyCode />
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
@@ -147,8 +147,8 @@
       <SDLCheck>
       </SDLCheck>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\Tef\Core;..\..\Tef\Utility;..\..\Utility\ThirdParty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;DEBUG;TE_WIN_SDK_7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\Framework\Tef\Core;..\..\Framework\Tef\Utility;..\..\Framework\Tef\Utility\ThirdParty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;TE_WIN_SDK_7;TE_RENDERER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <ExceptionHandling />
       <BufferSecurityCheck>false</BufferSecurityCheck>
@@ -170,8 +170,8 @@
       <SDLCheck>
       </SDLCheck>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\Tef\Core;..\..\Tef\Utility;..\..\Utility\ThirdParty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;DEBUG;TE_WIN_SDK_7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\Framework\Tef\Core;..\..\Framework\Tef\Utility;..\..\Framework\Tef\Utility\ThirdParty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;TE_WIN_SDK_7;TE_RENDERER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <ExceptionHandling />
@@ -187,6 +187,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="RendererPrerequisites.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

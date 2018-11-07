@@ -18,6 +18,97 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Core\CoreApplication.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Utility\Allocators\BasicAllocator.cpp" />
+    <ClCompile Include="Utility\Allocators\LinearAllocator.cpp" />
+    <ClCompile Include="Utility\Allocators\MemoryAllocator.cpp" />
+    <ClCompile Include="Utility\Allocators\StackAllocator.cpp" />
+    <ClCompile Include="Utility\Console\Console.cpp" />
+    <ClCompile Include="Utility\String\String.cpp" />
+    <ClCompile Include="Utility\ThirdParty\DDSTextureLoader\DDSTextureLoader.cpp" />
+    <ClCompile Include="Utility\ThirdParty\TinyXML\tinyxml2.cpp" />
+    <ClCompile Include="Utility\Utility\DynLib.cpp" />
+    <ClCompile Include="Utility\Utility\DynLibManager.cpp" />
+    <ClCompile Include="Utility\Utility\Time.cpp" />
+    <ClCompile Include="Utility\Utility\Timer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\CoreApplication.h" />
+    <ClInclude Include="Core\CorePrerequisites.h" />
+    <ClInclude Include="Utility\Allocators\BasicAllocator.h" />
+    <ClInclude Include="Utility\Allocators\LinearAllocator.h" />
+    <ClInclude Include="Utility\Allocators\MemoryAllocator.h" />
+    <ClInclude Include="Utility\Allocators\PoolAllocator.h" />
+    <ClInclude Include="Utility\Allocators\StackAllocator.h" />
+    <ClInclude Include="Utility\Console\Console.h" />
+    <ClInclude Include="Utility\Debug\Debug.h" />
+    <ClInclude Include="Utility\Error\Error.h" />
+    <ClInclude Include="Utility\Error\Exception.h" />
+    <ClInclude Include="Utility\Prerequisites\FwdDeclUtil.h" />
+    <ClInclude Include="Utility\Prerequisites\PlatformDefines.h" />
+    <ClInclude Include="Utility\Prerequisites\PrerequisitesUtil.h" />
+    <ClInclude Include="Utility\Prerequisites\StdHeaders.h" />
+    <ClInclude Include="Utility\Prerequisites\Types.h" />
+    <ClInclude Include="Utility\String\String.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\ai_assert.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\anim.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\camera.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\cexport.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\cfileio.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\cimport.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\color4.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\Compiler\poppack1.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\Compiler\pstdint.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\Compiler\pushpack1.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\config.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\DefaultLogger.hpp" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\defs.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\Exporter.hpp" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\Importer.hpp" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\importerdesc.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\IOStream.hpp" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\IOSystem.hpp" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\light.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\Logger.hpp" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\LogStream.hpp" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\material.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\matrix3x3.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\matrix4x4.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\mesh.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\metadata.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\NullLogger.hpp" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\port\AndroidJNI\AndroidJNIIOSystem.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\postprocess.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\ProgressHandler.hpp" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\quaternion.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\scene.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\texture.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\types.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\vector2.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\vector3.h" />
+    <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\version.h" />
+    <ClInclude Include="Utility\ThirdParty\DDSTextureLoader\DDSTextureLoader.h" />
+    <ClInclude Include="Utility\ThirdParty\Json\Json.h" />
+    <ClInclude Include="Utility\ThirdParty\TinyXML\tinyxml2.h" />
+    <ClInclude Include="Utility\Threading\Threading.h" />
+    <ClInclude Include="Utility\Utility\DynLib.h" />
+    <ClInclude Include="Utility\Utility\DynLibManager.h" />
+    <ClInclude Include="Utility\Utility\Module.h" />
+    <ClInclude Include="Utility\Utility\NonCopyable.h" />
+    <ClInclude Include="Utility\Utility\Time.h" />
+    <ClInclude Include="Utility\Utility\Timer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Utility\ThirdParty\Assimp\include\assimp\color4.inl" />
+    <None Include="Utility\ThirdParty\Assimp\include\assimp\material.inl" />
+    <None Include="Utility\ThirdParty\Assimp\include\assimp\matrix3x3.inl" />
+    <None Include="Utility\ThirdParty\Assimp\include\assimp\matrix4x4.inl" />
+    <None Include="Utility\ThirdParty\Assimp\include\assimp\quaternion.inl" />
+    <None Include="Utility\ThirdParty\Assimp\include\assimp\vector2.inl" />
+    <None Include="Utility\ThirdParty\Assimp\include\assimp\vector3.inl" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{F9DCFD66-C0D1-4EE5-B70D-CF58B1B3774C}</ProjectGuid>
@@ -26,29 +117,29 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -75,13 +166,15 @@
     <TargetName>Tef</TargetName>
     <IncludePath>Utility\ThirdParty\Json;Utility\ThirdParty\TinyXML;Utility\ThirdParty\Assimp\include;$(IncludePath);F:\softwares\Microsoft DirectX SDK (June 2010)\Include;F:\softwares\Microsoft SDKs\Windows\v7.1\Include</IncludePath>
     <LibraryPath>Utility\ThirdParty\Assimp\lib\lib86;F:\softwares\Microsoft DirectX SDK (June 2010)\Lib\x86;$(LibraryPath);F:\softwares\Microsoft SDKs\Windows\v7.1\Lib\</LibraryPath>
+    <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)Build\bin\x64\Release\</OutDir>
     <IntDir>$(SolutionDir)Build\obj\x64\Release\Tef\</IntDir>
     <TargetName>Tef</TargetName>
-    <IncludePath>Utility\ThirdParty\Json;Utility\ThirdParty\TinyXML;Utility\ThirdParty\Assimp\include;$(IncludePath);F:\softwares\Microsoft DirectX SDK (June 2010)\Include;F:\softwares\Microsoft SDKs\Windows\v7.1\Include</IncludePath>
+    <IncludePath>Utility\ThirdParty\Json;Utility\ThirdParty\TinyXML;Utility\ThirdParty\Assimp\include;$(IncludePath);F:\softwares\Microsoft SDKs\Windows\v7.1\Include</IncludePath>
     <LibraryPath>Utility\ThirdParty\Assimp\lib\lib64;F:\softwares\Microsoft DirectX SDK (June 2010)\Lib\x64;$(LibraryPath);F:\softwares\Microsoft SDKs\Windows\v7.1\Lib\</LibraryPath>
+    <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)Build\bin\x64\Debug\</OutDir>
@@ -89,6 +182,7 @@
     <TargetName>Tef</TargetName>
     <IncludePath>Utility\ThirdParty\Json;Utility\ThirdParty\TinyXML;Utility\ThirdParty\Assimp\include;$(IncludePath);F:\softwares\Microsoft DirectX SDK (June 2010)\Include;F:\softwares\Microsoft SDKs\Windows\v7.1\Include</IncludePath>
     <LibraryPath>Utility\ThirdParty\Assimp\lib\lib64;F:\softwares\Microsoft DirectX SDK (June 2010)\Lib\x64;$(LibraryPath);F:\softwares\Microsoft SDKs\Windows\v7.1\Lib\</LibraryPath>
+    <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)Build\bin\x86\Debug\</OutDir>
@@ -96,17 +190,18 @@
     <TargetName>Tef</TargetName>
     <IncludePath>Utility\ThirdParty\Json;Utility\ThirdParty\TinyXML;Utility\ThirdParty\Assimp\include;$(IncludePath);F:\softwares\Microsoft DirectX SDK (June 2010)\Include;F:\softwares\Microsoft SDKs\Windows\v7.1\Include</IncludePath>
     <LibraryPath>Utility\ThirdParty\Assimp\lib\lib86;F:\softwares\Microsoft DirectX SDK (June 2010)\Lib\x86;$(LibraryPath);F:\softwares\Microsoft SDKs\Windows\v7.1\Lib\</LibraryPath>
+    <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>Disabled</Optimization>
       <SDLCheck>
       </SDLCheck>
       <ConformanceMode>false</ConformanceMode>
       <AdditionalIncludeDirectories>Utility\ThirdParty;Utility\;Core\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
       <OmitFramePointers />
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling />
@@ -136,7 +231,7 @@
       <ConformanceMode>false</ConformanceMode>
       <AdditionalIncludeDirectories>Utility\ThirdParty;Utility\;Core\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;TE_WIN_SDK_7;DEBUG;TE_EXPORTS;TE_CORE_EXPORTS;TE_UTILITY_EXPORTS;TE_CONFIG=TE_CONFIG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WIN7_PLATFORM_UPDATE;WIN32;_WINDOWS;TE_WIN_SDK_7;DEBUG;TE_EXPORTS;TE_CORE_EXPORTS;TE_UTILITY_EXPORTS;TE_CONFIG=TE_CONFIG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -205,51 +300,6 @@
       <AdditionalDependencies>Utility\ThirdParty\Assimp\lib\lib64\assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="Core\CoreApplication.h" />
-    <ClInclude Include="Core\CorePrerequisites.h" />
-    <ClInclude Include="Utility\Allocators\BasicAllocator.h" />
-    <ClInclude Include="Utility\Allocators\LinearAllocator.h" />
-    <ClInclude Include="Utility\Allocators\MemoryAllocator.h" />
-    <ClInclude Include="Utility\Allocators\PoolAllocator.h" />
-    <ClInclude Include="Utility\Allocators\StackAllocator.h" />
-    <ClInclude Include="Utility\Console\Console.h" />
-    <ClInclude Include="Utility\Debug\Debug.h" />
-    <ClInclude Include="Utility\Error\Error.h" />
-    <ClInclude Include="Utility\Error\Exception.h" />
-    <ClInclude Include="Utility\Prerequisites\FwdDeclUtil.h" />
-    <ClInclude Include="Utility\Prerequisites\PlatformDefines.h" />
-    <ClInclude Include="Utility\Prerequisites\PrerequisitesUtil.h" />
-    <ClInclude Include="Utility\Prerequisites\StdHeaders.h" />
-    <ClInclude Include="Utility\Prerequisites\Types.h" />
-    <ClInclude Include="Utility\String\String.h" />
-    <ClInclude Include="Utility\ThirdParty\DDSTextureLoader\DDSTextureLoader.h" />
-    <ClInclude Include="Utility\ThirdParty\Json\Json.h" />
-    <ClInclude Include="Utility\ThirdParty\TinyXML\tinyxml2.h" />
-    <ClInclude Include="Utility\Threading\Threading.h" />
-    <ClInclude Include="Utility\Utility\DynLib.h" />
-    <ClInclude Include="Utility\Utility\DynLibManager.h" />
-    <ClInclude Include="Utility\Utility\Module.h" />
-    <ClInclude Include="Utility\Utility\NonCopyable.h" />
-    <ClInclude Include="Utility\Utility\Time.h" />
-    <ClInclude Include="Utility\Utility\Timer.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Core\CoreApplication.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Utility\Allocators\BasicAllocator.cpp" />
-    <ClCompile Include="Utility\Allocators\LinearAllocator.cpp" />
-    <ClCompile Include="Utility\Allocators\MemoryAllocator.cpp" />
-    <ClCompile Include="Utility\Allocators\StackAllocator.cpp" />
-    <ClCompile Include="Utility\Console\Console.cpp" />
-    <ClCompile Include="Utility\String\String.cpp" />
-    <ClCompile Include="Utility\ThirdParty\DDSTextureLoader\DDSTextureLoader.cpp" />
-    <ClCompile Include="Utility\ThirdParty\TinyXML\tinyxml2.cpp" />
-    <ClCompile Include="Utility\Utility\DynLib.cpp" />
-    <ClCompile Include="Utility\Utility\DynLibManager.cpp" />
-    <ClCompile Include="Utility\Utility\Time.cpp" />
-    <ClCompile Include="Utility\Utility\Timer.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

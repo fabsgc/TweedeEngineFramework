@@ -12,10 +12,10 @@ namespace te
     *  ################################################################ */
 
     template <size_t ElementSize = 4, size_t ElementsPerBlock = 512, size_t Alignment = 4>
-    class PoolAllocator
+    class TE_UTILITY_EXPORT PoolAllocator
     {
     private:
-        class PoolBlock
+        class TE_UTILITY_EXPORT PoolBlock
         {
         public:
             PoolBlock(UINT8* poolBlock)

@@ -7,7 +7,7 @@ namespace te
     using TimePoint = std::chrono::time_point<std::chrono::high_resolution_clock>;
     using Clock = std::chrono::high_resolution_clock;
 
-    class Timer
+    class TE_UTILITY_EXPORT Timer
     {
     public:
         Timer();

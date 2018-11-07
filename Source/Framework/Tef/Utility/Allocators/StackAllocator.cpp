@@ -17,12 +17,12 @@ namespace te
         return *_GlobalStackAllocator;
     }
 
-    void* ege_stack_allocate(UINT32 numBytes)
+    void* te_stack_allocate(UINT32 numBytes)
     {
         return gStackAllocator().Allocate(numBytes);
     }
 
-    void ege_stack_deallocate(void* data)
+    void te_stack_deallocate(void* data)
     {
         gStackAllocator().Deallocate((UINT8*)data);
     }

@@ -1,20 +1,8 @@
+#pragma once
+
 #include "Prerequisites/PrerequisitesUtil.h"
 
 #if TE_PLATFORM == TE_PLATFORM_WIN32
-#   if defined(TE_WIN_SDK_7)
-#      undef _WIN32_WINNT
-#      define WIN32_LEAN_AND_MEAN
-#      define _WIN32_WINNT _WIN32_WINNT_WIN7
-#      pragma warning(push)
-#      pragma warning( disable : 4005 )
-#   elif defined(TE_WIN_SDK_8)
-#      define WIN32_LEAN_AND_MEAN
-#      define _WIN32_WINNT _WIN32_WINNT_WIN8
-#   elif defined(TE_WIN_SDK_10)
-#      define WIN32_LEAN_AND_MEAN
-#      define _WIN32_WINNT _WIN32_WINNT_WIN10
-#   endif
-
 #   if TE_RENDER_API == TE_RENDER_API_DIRECTX11
 #       include <dxgi.h>
 #       include <d3d11_1.h>
@@ -59,3 +47,21 @@
 #else
 
 #endif
+
+namespace te
+{
+    template<typename T>
+    inline void SafeReleaseCom(T& ptr)
+    {
+        if (ptr != nullptr)
+        {
+#if TE_PLATFORM == TE_PLATFORM_WIN32
+            ptr->Release();
+#else
+            delete ptr;
+#endif
+            ptr = nullptr;
+        }
+    }
+
+}

@@ -12,7 +12,7 @@ namespace te
     *  ############# STACK ALLOCATOR #####################################
     *  ################################################################ */
 
-    class StackAllocator
+    class TE_UTILITY_EXPORT StackAllocator
     {
     private:
         struct StackAllocationHeader {
@@ -108,10 +108,10 @@ namespace te
     *  ############# ALLOCATOR METHODS ###################################
     *  ################################################################ */
 
-    StackAllocator& gStackAllocator();
+    TE_UTILITY_EXPORT StackAllocator& gStackAllocator();
 
-    void* ege_stack_allocate(UINT32 numBytes);
-    void ege_stack_deallocate(void* data);
+    TE_UTILITY_EXPORT void* te_stack_allocate(UINT32 numBytes);
+    TE_UTILITY_EXPORT void te_stack_deallocate(void* data);
 
     /* ###################################################################
     *  ############# MEMORY ALLOCATOR FOR STD ALLOCATOR ##################
@@ -121,12 +121,12 @@ namespace te
     * Memory allocator using StackAllocator
     */
     template<>
-    class MemoryAllocator<StackAllocator> : public MemoryAllocatorBase
+    class TE_UTILITY_EXPORT MemoryAllocator<StackAllocator> : public MemoryAllocatorBase
     {
     public:
         static void* Allocate(size_t bytes)
         {
-#if TE_DEBUG
+#if TE_DEBUG_MODE == 1
             AddNewCount();
 #endif
             return gStackAllocator().Allocate((UINT32)bytes);
@@ -134,7 +134,7 @@ namespace te
 
         static void Deallocate(void* ptr)
         {
-#if TE_DEBUG
+#if TE_DEBUG_DEBUG == 1
             AddFreeCount();
 #endif
             gStackAllocator().Deallocate(ptr);

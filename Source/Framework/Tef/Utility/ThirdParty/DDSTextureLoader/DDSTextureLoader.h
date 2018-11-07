@@ -16,15 +16,15 @@
 
 #pragma once
 
-#if defined(EGE_WIN_SDK_7)
+#if defined(TE_WIN_SDK_7)
 #   define WIN32_LEAN_AND_MEAN
 #   define _WIN32_WINNT _WIN32_WINNT_WIN7
 #   pragma warning(push)
 #   pragma warning( disable : 4005 )
-#elif defined(EGE_WIN_SDK_8)
+#elif defined(TE_WIN_SDK_8)
 #   define WIN32_LEAN_AND_MEAN
 #   define _WIN32_WINNT _WIN32_WINNT_WIN8
-#elif defined(EGE_WIN_SDK_10)
+#elif defined(TE_WIN_SDK_10)
 #   define WIN32_LEAN_AND_MEAN
 #   define _WIN32_WINNT _WIN32_WINNT_WIN10
 #endif

@@ -10,6 +10,10 @@
 
 #include "Json/Json.h"
 
+#if TE_PLATFORM == TE_PLATFORM_WIN32
+#   include "DDSTextureLoader/DDSTextureLoader.h"
+#endif
+
 #if TE_DEBUG_MODE == 1
 #   if !defined(HR) && TE_PLATFORM == TE_PLATFORM_WIN32
 #       define HR(x, message)                           \
@@ -29,20 +33,6 @@
 
 namespace te
 {
-    template<typename T>
-    inline void SafeReleaseCom(T& ptr)
-    {
-        if (ptr != nullptr)
-        {
-#if TE_PLATFORM == TE_PLATFORM_WIN32
-            ptr->Release();
-#else
-            delete ptr;
-#endif
-            ptr = nullptr;
-        }
-    }
-
     template<typename T>
     inline void SafeRelease(T& ptr)
     {

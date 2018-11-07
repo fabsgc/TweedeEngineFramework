@@ -10,7 +10,7 @@ namespace te
       * and shut down before and after use.
       */
     template <class T>
-    class Module
+    class TE_UTILITY_EXPORT Module
     {
     public:
         /**
@@ -59,11 +59,11 @@ namespace te
         template<class ...Args>
         static void StartUp(Args &&...args)
         {
-            if (isStartedUp())
+            if (IsStartedUp())
                 TE_EXCEPT(InternalErrorException, "Trying to start an already started module.");
 
-            _instance() = bs_new<T>(std::forward<Args>(args)...);
-            isStartedUp() = true;
+            _instance() = te_new<T>(std::forward<Args>(args)...);
+            IsStartedUp() = true;
 
             ((Module*)_instance())->OnStartUp();
         }
