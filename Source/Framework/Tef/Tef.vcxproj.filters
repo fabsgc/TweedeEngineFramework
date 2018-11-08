@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Utility\Allocators\BasicAllocator.cpp" />
     <ClCompile Include="Utility\Allocators\LinearAllocator.cpp" />
     <ClCompile Include="Utility\Allocators\MemoryAllocator.cpp" />
@@ -14,7 +13,10 @@
     <ClCompile Include="Utility\Utility\Time.cpp" />
     <ClCompile Include="Utility\Utility\Timer.cpp" />
     <ClCompile Include="Core\CoreApplication.cpp" />
-    <ClCompile Include="Utility\ThirdParty\DDSTextureLoader\DDSTextureLoader.cpp" />
+    <ClCompile Include="Utility\Utility\Util.cpp" />
+    <ClCompile Include="Utility\ThirdParty\MD5\md5.cpp" />
+    <ClCompile Include="Utility\Utility\UUID.cpp" />
+    <ClCompile Include="Core\RenderAPI\RenderWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utility\Allocators\BasicAllocator.h" />
@@ -80,7 +82,10 @@
     <ClInclude Include="Utility\Utility\Timer.h" />
     <ClInclude Include="Core\CoreApplication.h" />
     <ClInclude Include="Core\CorePrerequisites.h" />
-    <ClInclude Include="Utility\ThirdParty\DDSTextureLoader\DDSTextureLoader.h" />
+    <ClInclude Include="Utility\Utility\Util.h" />
+    <ClInclude Include="Utility\ThirdParty\MD5\md5.h" />
+    <ClInclude Include="Utility\Utility\UUID.h" />
+    <ClInclude Include="Core\RenderAPI\RenderWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Utility\ThirdParty\Assimp\include\assimp\color4.inl" />

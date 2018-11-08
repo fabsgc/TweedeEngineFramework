@@ -1,6 +1,7 @@
 #pragma once
 
-#include "Prerequisites/PrerequisitesUtil.h"
+#include "Allocators/MemoryAllocator.h"
+#include <string>
 
 namespace te
 {

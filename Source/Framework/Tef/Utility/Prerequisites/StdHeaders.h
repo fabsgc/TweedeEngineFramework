@@ -77,8 +77,6 @@ extern "C" {
 }
 #endif
 
-#include "Allocators/BasicAllocator.h"
-
 #if TE_PLATFORM == TE_PLATFORM_WIN32
 #   include <Windows.h>
 #   include <fcntl.h>
@@ -103,6 +101,25 @@ extern "C" {
 
 namespace te
 {
+    /**
+     * Hash for enum types, to be used instead of std::hash<T> when T is an enum.
+     *
+     * Until C++14, std::hash<T> is not defined if T is a enum (see
+     * http://www.open-std.org/jtc1/sc22/wg21/docs/lwg-defects.html#2148).  But
+     * even with C++14, as of october 2016, std::hash for enums is not widely
+     * implemented by compilers, so here when T is a enum, we use EnumClassHash
+     * instead of std::hash. (For instance, in bs::hash_combine(), or
+     * bs::UnorderedMap.)
+     */
+    struct EnumClassHash
+    {
+        template <typename T>
+        constexpr std::size_t operator()(T t) const
+        {
+            return static_cast<std::size_t>(t);
+        }
+    };
+
     /* ###################################################################
     *  ############# STL CONTAINER SNIPPETS ##############################
     *  ################################################################ */
@@ -112,6 +129,12 @@ namespace te
 
     template <typename T, typename Allocator = GeneralAllocator>
     using UPtr = std::unique_ptr<T, decltype(&te_delete<T, Allocator>)>;
+
+    template <typename Key>
+    using HashType = typename std::conditional<std::is_enum<Key>::value, EnumClassHash, std::hash<Key>>::type;
+
+    template <typename T, typename A = StdAllocator<T, BasicAllocator>>
+    using Deque = std::deque<T, A>;
 
     template <typename T, typename A = StdAllocator<T, BasicAllocator>>
     using Vector = std::vector<T, A>;
@@ -150,19 +173,10 @@ namespace te
     /**
     * \brief Create a new shared pointer using a custom allocator category.
     */
-    template<class Type, class Allocator, class... Args>
+    template<class Type, class Allocator = BasicAllocator, class... Args>
     SPtr<Type> te_shared_ptr_new(Args &&... args)
     {
         return std::allocate_shared<Type>(StdAllocator<Type, Allocator>(), std::forward<Args>(args)...);
-    }
-
-    /**
-    * \brief Create a new shared pointer using the default allocator category
-    */
-    template<class Type, class... Args>
-    SPtr<Type> te_shared_ptr_new(Args &&... args)
-    {
-        return std::allocate_shared<Type>(StdAllocator<Type, BasicAllocator>(), std::forward<Args>(args)...);
     }
 
     /**

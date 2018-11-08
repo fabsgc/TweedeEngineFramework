@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Prerequisites/PrerequisitesUtil.h"
-#include "Prerequisites/Types.h"
-
 #include <new>
+#include <limits>
+#include <cstdint>
+#include <utility>
 
 #pragma once
 #undef min
@@ -26,12 +26,12 @@ namespace te {
     class TE_UTILITY_EXPORT MemoryCounter
     {
     public:
-        static UINT64 GetNumAllocs()
+        static uint64_t GetNumAllocs()
         {
             return News;
         }
 
-        static UINT64 GetNumFrees()
+        static uint64_t GetNumFrees()
         {
             return Frees;
         }
@@ -42,8 +42,8 @@ namespace te {
         static void AddNewCount() { News++; }
         static void AddFreeCount() { Frees++; }
 
-        static UINT64 News;
-        static UINT64 Frees;
+        static uint64_t News;
+        static uint64_t Frees;
     };
 
     /**
@@ -64,7 +64,7 @@ namespace te {
     * Memory allocator providing a generic implementation. Specialize for specific categories as needed.
     */
     template<class T>
-    class TE_UTILITY_EXPORT MemoryAllocator : public MemoryAllocatorBase
+    class MemoryAllocator : public MemoryAllocatorBase
     {
     public:
         static void* Allocate(size_t bytes)
@@ -87,7 +87,7 @@ namespace te {
     /**
     * Default allocator when you want to use default os memory management
     */
-    class TE_UTILITY_EXPORT GeneralAllocator
+    class GeneralAllocator
     {
     };
 
@@ -99,7 +99,7 @@ namespace te {
     * Allocates the specified number of bytes (custom allocator)
     */
     template<class Allocator = GeneralAllocator>
-    TE_UTILITY_EXPORT inline void* te_allocate(UINT32 count)
+    inline void* te_allocate(UINT32 count)
     {
         return MemoryAllocator<Allocator>::Allocate(count);
     }
@@ -108,7 +108,7 @@ namespace te {
     * Allocates enough bytes to hold the specified type, but doesn't construct it (custom allocator).
     */
     template<class T, class Allocator = GeneralAllocator>
-    TE_UTILITY_EXPORT inline T* te_allocate()
+    inline T* te_allocate()
     {
         return (T*)MemoryAllocator<Allocator>::Allocate(sizeof(T));
     }
@@ -117,14 +117,14 @@ namespace te {
     * Create a new object with the specified allocator and the specified parameters (custom allocator).
     */
     template<class Type, class Allocator, class... Args>
-    TE_UTILITY_EXPORT inline Type* te_new(Args &&...args)
+    inline Type* te_new(Args &&...args)
     {
         return new (te_allocate<Allocator>(sizeof(Type))) Type(std::forward<Args>(args)...);
     }
 
     /** Create a new object with the specified allocator and the specified parameters. */
     template<class Type, class... Args>
-    TE_UTILITY_EXPORT inline Type* te_new(Args &&...args)
+    inline Type* te_new(Args &&...args)
     {
         return new (te_allocate<GeneralAllocator>(sizeof(Type))) Type(std::forward<Args>(args)...);
     }
@@ -133,14 +133,14 @@ namespace te {
     * Frees all the bytes allocated at the specified location.
     */
     template<class Allocator = GeneralAllocator>
-    TE_UTILITY_EXPORT inline void te_deallocate(void* ptr)
+    inline void te_deallocate(void* ptr)
     {
         MemoryAllocator<Allocator>::Deallocate(ptr);
     }
 
     /** Destructs and frees the specified object. */
     template<class T, class Allocator = GeneralAllocator>
-    TE_UTILITY_EXPORT inline void te_delete(T* ptr)
+    inline void te_delete(T* ptr)
     {
         (ptr)->~T();
         MemoryAllocator<Allocator>::Deallocate(ptr);
@@ -152,7 +152,7 @@ namespace te {
 
     /** Allocator used for the standard library */
     template <class T, class Allocator = GeneralAllocator>
-    class TE_UTILITY_EXPORT StdAllocator
+    class StdAllocator
     {
     public:
         typedef T value_type;

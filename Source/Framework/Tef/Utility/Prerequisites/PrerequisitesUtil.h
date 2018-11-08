@@ -74,8 +74,12 @@
 #include "Error/Error.h"
 #include "Utility/NonCopyable.h"
 #include "Prerequisites/Types.h"
-#include "Prerequisites/FwdDeclUtil.h"
 #include "Allocators/MemoryAllocator.h"
-#include "Prerequisites/StdHeaders.h"
-#include "String/String.h"
 #include "Threading/Threading.h"
+#include "Prerequisites/FwdDeclUtil.h"
+#include "Prerequisites/StdHeaders.h"
+
+
+#include "String/String.h"
+
+#include "Utility/Util.h"

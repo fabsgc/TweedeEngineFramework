@@ -82,7 +82,7 @@
     <IntDir>$(SolutionDir)Build\obj\x64\Debug\TefD3D11RenderAPI\</IntDir>
     <TargetExt>.dll</TargetExt>
     <TargetName>TefD3D11RenderAPI</TargetName>
-    <IncludePath>F:\softwares\Microsoft DirectX SDK (June 2010)\Include;$(IncludePath)</IncludePath>
+    <IncludePath>F:\softwares\Microsoft DirectX SDK (June 2010)\Include;ThirdParty\DDSTextureLoader;$(IncludePath)</IncludePath>
     <LibraryPath>F:\softwares\Microsoft DirectX SDK (June 2010)\Lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -202,9 +202,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ThirdParty\DDSTextureLoader\DDSTextureLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D3D11RenderAPIPreprequisites.h" />
+    <ClInclude Include="ThirdParty\DDSTextureLoader\DDSTextureLoader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

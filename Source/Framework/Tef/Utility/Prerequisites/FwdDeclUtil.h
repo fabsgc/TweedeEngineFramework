@@ -13,8 +13,8 @@ namespace te
 
     class Console;
 
-    class DynamicLib;
-    class DynamicLibManager;
+    class DynLib;
+    class DynLibManager;
 
     template<class T> class Module;
 

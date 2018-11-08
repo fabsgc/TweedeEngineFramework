@@ -96,6 +96,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>..\Framework\Tef\Core;..\Framework\Tef\Utility;..\Framework\Tef\Utility\ThirdParty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\..\Build\bin\x64\Debug\Tef.lib;%(AdditionalDependencies)</AdditionalDependencies>

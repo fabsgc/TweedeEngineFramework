@@ -10,10 +10,6 @@
 
 #include "Json/Json.h"
 
-#if TE_PLATFORM == TE_PLATFORM_WIN32
-#   include "DDSTextureLoader/DDSTextureLoader.h"
-#endif
-
 #if TE_DEBUG_MODE == 1
 #   if !defined(HR) && TE_PLATFORM == TE_PLATFORM_WIN32
 #       define HR(x, message)                           \

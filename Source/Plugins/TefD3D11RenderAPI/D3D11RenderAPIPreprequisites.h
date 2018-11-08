@@ -42,10 +42,11 @@
 #       pragma comment(lib, "xinput9_1_0.lib")
 #       pragma comment(lib, "xinput.lib")
 
+#       include "DDSTextureLoader.h"
+
 #   else
 #   endif
 #else
-
 #endif
 
 namespace te

@@ -10,7 +10,7 @@ namespace te
       * and shut down before and after use.
       */
     template <class T>
-    class TE_UTILITY_EXPORT Module
+    class Module
     {
     public:
         /**
@@ -31,6 +31,8 @@ namespace te
                     "Trying to access a destroyed module.");
             }
 
+            T* test = _instance();
+
             return *_instance();
         }
 
@@ -42,14 +44,12 @@ namespace te
         {
             if (!IsStartedUp())
             {
-                TE_EXCEPT(InternalErrorException,
-                    "Trying to access a module but it hasn't been started up yet.");
+                TE_EXCEPT(InternalErrorException, "Trying to access a module but it hasn't been started up yet.");
             }
 
             if (IsDestroyed())
             {
-                TE_EXCEPT(InternalErrorException,
-                    "Trying to access a destroyed module.");
+                TE_EXCEPT(InternalErrorException, "Trying to access a destroyed module.");
             }
 
             return _instance();
@@ -60,9 +60,11 @@ namespace te
         static void StartUp(Args &&...args)
         {
             if (IsStartedUp())
+            {
                 TE_EXCEPT(InternalErrorException, "Trying to start an already started module.");
+            }
 
-            _instance() = te_new<T>(std::forward<Args>(args)...);
+            _instance() = new T(std::forward<Args>(args)...);
             IsStartedUp() = true;
 
             ((Module*)_instance())->OnStartUp();
@@ -78,9 +80,11 @@ namespace te
             static_assert(std::is_base_of<T, SubType>::value, "Provided type is not derived from type the Module is initialized with.");
 
             if (IsStartedUp())
+            {
                 TE_EXCEPT(InternalErrorException, "Trying to start an already started module.");
+            }
 
-            _instance() = te_new<SubType>(std::forward<Args>(args)...);
+            _instance() = new SubType(std::forward<Args>(args)...);
             IsStartedUp() = true;
 
             ((Module*)_instance())->OnStartUp();
@@ -91,14 +95,12 @@ namespace te
         {
             if (IsDestroyed())
             {
-                TE_EXCEPT(InternalErrorException,
-                    "Trying to shut down an already shut down module.");
+                TE_EXCEPT(InternalErrorException, "Trying to shut down an already shut down module.");
             }
 
             if (!IsStartedUp())
             {
-                TE_EXCEPT(InternalErrorException,
-                    "Trying to shut down a module which was never started.");
+                TE_EXCEPT(InternalErrorException, "Trying to shut down a module which was never started.");
             }
 
             ((Module*)_instance())->OnShutDown();
@@ -150,7 +152,7 @@ namespace te
         }
 
         /**
-         * Checks has the Module been shut down.
+         * Checks if the Module has been shut down.
          *
          * @note	If module was never even started, this will return false.
          */
@@ -160,7 +162,7 @@ namespace te
             return inst;
         }
 
-        /** Checks has the Module been started up. */
+        /** Checks if the Module has been started up. */
         static bool& IsStartedUp()
         {
             static bool inst = false;

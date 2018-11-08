@@ -20,23 +20,26 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\CoreApplication.cpp" />
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Core\RenderAPI\RenderWindow.cpp" />
     <ClCompile Include="Utility\Allocators\BasicAllocator.cpp" />
     <ClCompile Include="Utility\Allocators\LinearAllocator.cpp" />
     <ClCompile Include="Utility\Allocators\MemoryAllocator.cpp" />
     <ClCompile Include="Utility\Allocators\StackAllocator.cpp" />
     <ClCompile Include="Utility\Console\Console.cpp" />
     <ClCompile Include="Utility\String\String.cpp" />
-    <ClCompile Include="Utility\ThirdParty\DDSTextureLoader\DDSTextureLoader.cpp" />
+    <ClCompile Include="Utility\ThirdParty\MD5\md5.cpp" />
     <ClCompile Include="Utility\ThirdParty\TinyXML\tinyxml2.cpp" />
     <ClCompile Include="Utility\Utility\DynLib.cpp" />
     <ClCompile Include="Utility\Utility\DynLibManager.cpp" />
     <ClCompile Include="Utility\Utility\Time.cpp" />
     <ClCompile Include="Utility\Utility\Timer.cpp" />
+    <ClCompile Include="Utility\Utility\Util.cpp" />
+    <ClCompile Include="Utility\Utility\UUID.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\CoreApplication.h" />
     <ClInclude Include="Core\CorePrerequisites.h" />
+    <ClInclude Include="Core\RenderAPI\RenderWindow.h" />
     <ClInclude Include="Utility\Allocators\BasicAllocator.h" />
     <ClInclude Include="Utility\Allocators\LinearAllocator.h" />
     <ClInclude Include="Utility\Allocators\MemoryAllocator.h" />
@@ -89,8 +92,8 @@
     <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\vector2.h" />
     <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\vector3.h" />
     <ClInclude Include="Utility\ThirdParty\Assimp\include\assimp\version.h" />
-    <ClInclude Include="Utility\ThirdParty\DDSTextureLoader\DDSTextureLoader.h" />
     <ClInclude Include="Utility\ThirdParty\Json\Json.h" />
+    <ClInclude Include="Utility\ThirdParty\MD5\md5.h" />
     <ClInclude Include="Utility\ThirdParty\TinyXML\tinyxml2.h" />
     <ClInclude Include="Utility\Threading\Threading.h" />
     <ClInclude Include="Utility\Utility\DynLib.h" />
@@ -99,6 +102,8 @@
     <ClInclude Include="Utility\Utility\NonCopyable.h" />
     <ClInclude Include="Utility\Utility\Time.h" />
     <ClInclude Include="Utility\Utility\Timer.h" />
+    <ClInclude Include="Utility\Utility\Util.h" />
+    <ClInclude Include="Utility\Utility\UUID.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Utility\ThirdParty\Assimp\include\assimp\color4.inl" />
@@ -130,7 +135,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -164,7 +169,7 @@
     <OutDir>$(SolutionDir)Build\bin\x86\Release\</OutDir>
     <IntDir>$(SolutionDir)Build\obj\x86\Release\Tef\</IntDir>
     <TargetName>Tef</TargetName>
-    <IncludePath>Utility\ThirdParty\Json;Utility\ThirdParty\TinyXML;Utility\ThirdParty\Assimp\include;$(IncludePath);F:\softwares\Microsoft DirectX SDK (June 2010)\Include;F:\softwares\Microsoft SDKs\Windows\v7.1\Include</IncludePath>
+    <IncludePath>Utility\ThirdParty\MD5;Utility\ThirdParty\Json;Utility\ThirdParty\TinyXML;Utility\ThirdParty\Assimp\include;$(IncludePath);F:\softwares\Microsoft DirectX SDK (June 2010)\Include;F:\softwares\Microsoft SDKs\Windows\v7.1\Include</IncludePath>
     <LibraryPath>Utility\ThirdParty\Assimp\lib\lib86;F:\softwares\Microsoft DirectX SDK (June 2010)\Lib\x86;$(LibraryPath);F:\softwares\Microsoft SDKs\Windows\v7.1\Lib\</LibraryPath>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
@@ -172,7 +177,7 @@
     <OutDir>$(SolutionDir)Build\bin\x64\Release\</OutDir>
     <IntDir>$(SolutionDir)Build\obj\x64\Release\Tef\</IntDir>
     <TargetName>Tef</TargetName>
-    <IncludePath>Utility\ThirdParty\Json;Utility\ThirdParty\TinyXML;Utility\ThirdParty\Assimp\include;$(IncludePath);F:\softwares\Microsoft SDKs\Windows\v7.1\Include</IncludePath>
+    <IncludePath>Utility\ThirdParty\MD5;Utility\ThirdParty\Json;Utility\ThirdParty\TinyXML;Utility\ThirdParty\Assimp\include;$(IncludePath);F:\softwares\Microsoft SDKs\Windows\v7.1\Include</IncludePath>
     <LibraryPath>Utility\ThirdParty\Assimp\lib\lib64;F:\softwares\Microsoft DirectX SDK (June 2010)\Lib\x64;$(LibraryPath);F:\softwares\Microsoft SDKs\Windows\v7.1\Lib\</LibraryPath>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
@@ -180,15 +185,15 @@
     <OutDir>$(SolutionDir)Build\bin\x64\Debug\</OutDir>
     <IntDir>$(SolutionDir)Build\obj\x64\Debug\Tef\</IntDir>
     <TargetName>Tef</TargetName>
-    <IncludePath>Utility\ThirdParty\Json;Utility\ThirdParty\TinyXML;Utility\ThirdParty\Assimp\include;$(IncludePath);F:\softwares\Microsoft DirectX SDK (June 2010)\Include;F:\softwares\Microsoft SDKs\Windows\v7.1\Include</IncludePath>
+    <IncludePath>Utility\ThirdParty\MD5;Utility\ThirdParty\Json;Utility\ThirdParty\TinyXML;Utility\ThirdParty\Assimp\include;$(IncludePath);F:\softwares\Microsoft DirectX SDK (June 2010)\Include;F:\softwares\Microsoft SDKs\Windows\v7.1\Include</IncludePath>
     <LibraryPath>Utility\ThirdParty\Assimp\lib\lib64;F:\softwares\Microsoft DirectX SDK (June 2010)\Lib\x64;$(LibraryPath);F:\softwares\Microsoft SDKs\Windows\v7.1\Lib\</LibraryPath>
-    <TargetExt>.exe</TargetExt>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)Build\bin\x86\Debug\</OutDir>
     <IntDir>$(SolutionDir)Build\obj\x86\Debug\Tef\</IntDir>
     <TargetName>Tef</TargetName>
-    <IncludePath>Utility\ThirdParty\Json;Utility\ThirdParty\TinyXML;Utility\ThirdParty\Assimp\include;$(IncludePath);F:\softwares\Microsoft DirectX SDK (June 2010)\Include;F:\softwares\Microsoft SDKs\Windows\v7.1\Include</IncludePath>
+    <IncludePath>Utility\ThirdParty\MD5;Utility\ThirdParty\Json;Utility\ThirdParty\TinyXML;Utility\ThirdParty\Assimp\include;$(IncludePath);F:\softwares\Microsoft DirectX SDK (June 2010)\Include;F:\softwares\Microsoft SDKs\Windows\v7.1\Include</IncludePath>
     <LibraryPath>Utility\ThirdParty\Assimp\lib\lib86;F:\softwares\Microsoft DirectX SDK (June 2010)\Lib\x86;$(LibraryPath);F:\softwares\Microsoft SDKs\Windows\v7.1\Lib\</LibraryPath>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
@@ -219,7 +224,7 @@
       <PreprocessorDefinitions>WIN32;_WINDOWS;TE_WIN_SDK_7;DEBUG;TE_EXPORTS;TE_CORE_EXPORTS;TE_UTILITY_EXPORTS;TE_CONFIG=TE_CONFIG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>Utility\ThirdParty\Assimp\lib\lib32\assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>rpcrt4.lib;Utility\ThirdParty\Assimp\lib\lib32\assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -232,7 +237,7 @@
       <AdditionalIncludeDirectories>Utility\ThirdParty;Utility\;Core\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <PreprocessorDefinitions>_WIN7_PLATFORM_UPDATE;WIN32;_WINDOWS;TE_WIN_SDK_7;DEBUG;TE_EXPORTS;TE_CORE_EXPORTS;TE_UTILITY_EXPORTS;TE_CONFIG=TE_CONFIG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <CompileAs>CompileAsCpp</CompileAs>
       <DisableSpecificWarnings>4577;4530</DisableSpecificWarnings>
@@ -240,9 +245,10 @@
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <UseFullPaths>false</UseFullPaths>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>Utility\ThirdParty\Assimp\lib\lib64\assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>rpcrt4.lib;Utility\ThirdParty\Assimp\lib\lib64\assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -270,7 +276,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>Utility\ThirdParty\Assimp\lib\lib32\assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>rpcrt4.lib;Utility\ThirdParty\Assimp\lib\lib32\assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -292,12 +298,12 @@
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <UseFullPaths>false</UseFullPaths>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <ExceptionHandling />
+      <ExceptionHandling>Sync</ExceptionHandling>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>Utility\ThirdParty\Assimp\lib\lib64\assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>rpcrt4.lib;Utility\ThirdParty\Assimp\lib\lib64\assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

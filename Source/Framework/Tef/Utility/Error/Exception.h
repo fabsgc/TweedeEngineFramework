@@ -164,6 +164,7 @@ namespace te
 		static_assert((std::is_base_of<te::Exception, type>::value),						\
 			"Invalid exception type (" #type ") for TE_EXCEPT macro."						\
 			" It needs to derive from te::Exception.");										\
+        TE_ASSERT_ERROR(false, desc);                                                       \
 	}
 #endif
 
